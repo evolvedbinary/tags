@@ -5,7 +5,14 @@
             collection a higher score. It can also be specified on a
             single index definition. -->
         <lucene>
-            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+            <analyzer class="com.evolvedbinary.lucene.analyzer.OhAnalyzer">
+                <param name="punctuationDictionary" type="char[]">
+                    <value>'</value>
+                    <value>-</value>
+                    <value>’</value>
+                </param>
+                <param name="minimumTermLength" type="int" value="2"/>
+            </analyzer>
             <text qname="label"/>
         </lucene><!-- Range index configuration -->
         <create qname="id" type="xs:string"/>
